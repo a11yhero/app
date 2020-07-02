@@ -6,7 +6,8 @@ struct Types: View {
             List {
                 Section(header:
                     Text(verbatim: "SwiftUI")
-                        .font(.headline)) {
+                        .font(.headline)
+                        .padding(.vertical)) {
                     ForEach(Face.all) { face in
                         NavigationLink(destination: Type(face: face)) {
                             Text(face.name)
