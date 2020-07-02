@@ -3,10 +3,10 @@ import SwiftUI
 struct Tabs: View {
     var body: some View {
         TabView {
-            About()
+            Home()
                 .tabItem {
                     Image(systemName: "circle.lefthalf.fill")
-                    Text("Second")
+                    Text("Home")
                 }
             Text("First View")
                 .tabItem {
