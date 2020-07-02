@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct Home: View {
+    @Binding var tab: Int
+    
     var body: some View {
         NavigationView {
             List {
@@ -11,23 +13,54 @@ struct Home: View {
                     Spacer()
                 }) {
                     VStack {
-                        Text(.init("Title"))
+                        Text("Title")
                             .font(.headline)
+                            .fixedSize(horizontal: true, vertical: false)
                             .padding()
-                        Text(.init("Description"))
+                        Text("Description")
                             .font(.footnote)
                             .foregroundColor(.secondary)
                             .fixedSize(horizontal: false, vertical: false)
-                            .padding()
+                            .padding(.vertical)
                     }
+                }
+                Section(footer:
+                    Text("About.dynamic.type")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)) {
+                    Button(action: {
+                        self.tab = 1
+                    }) {
+                        Text("Dynamic.type")
+                    }.foregroundColor(.primary)
+                }
+                Section(footer:
+                    Text("About.dynamic.colors")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)) {
+                    Button(action: {
+                        self.tab = 2
+                    }) {
+                        Text("Dynamic.colors")
+                    }.foregroundColor(.primary)
+                }
+                Section(footer:
+                    Text("About.accessibility.features")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)) {
+                    Button(action: {
+                        self.tab = 3
+                    }) {
+                        Text("Accessibility.features")
+                    }.foregroundColor(.primary)
                 }
                 Section {
                     NavigationLink(destination: Privacy()) {
-                        Text(.init("Privacy"))
+                        Text("Privacy")
                     }
                 }
             }.listStyle(GroupedListStyle())
-                .navigationBarTitle(.init("Home"), displayMode: .large)
+                .navigationBarTitle("Home", displayMode: .large)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

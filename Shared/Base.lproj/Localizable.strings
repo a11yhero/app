@@ -9,3 +9,28 @@ We.dont = "This app is not tracking you in anyway, nor sharing any information f
 This app will always be free, subscription free, and ad free.
 
 Feel free to do whatever you want with this app and if you stop using it feel free to remove it from your device; you will always have a chance to download it again from the App Store.";
+Dynamic.type = "Dynamic Type";
+About.dynamic.type = "Dynamic Type feature allows users to choose the size of textual content displayed on the screen.
+
+It helps users who need larger text for better readability. It also accomodates those who can read smaller text, allowing more information to appear on the screen.
+
+Apps that support Dynamic Type also provide a more consistent reading experience.";
+Dynamic.colors = "Dynamic Colors";
+About.dynamic.colors = "Dynamic Colors adapt automatically to the underlying interface style. Light and dark interfaces use very different color palettes. Colors that work well in a light appearance may be hard to see in a dark appearance, and vice versa. An adaptive color object returns different color values for different interface styles.
+
+When configuring UI elements, choose semantic colors which convey the intended use of the color, rather than specific color values. When you use them for their intended purpose, they render with color values appropriate for the current settings.";
+Type = "Type";
+Colors = "Colors";
+Features = "Features";
+Accessibility.features = "Accessibility Features";
+About.accessibility.features = "Accessibility features help a wide range of people interact with their devices. For many, accessibility is a necessity. For others, it’s a practicality. People can personalize their devices by choosing which accessibility features give them the best user experience.
+
+By designing your app with accessibility in mind, you make it possible for everyone to enjoy your app.";
+Misfits = "Here’s to the crazy ones, the misfits, the rebels, the troublemakers, the round pegs in the square holes, the ones who see things differently.
+
+They’re not fond of rules and they have no respect for the status quo; you can quote them, disagree with them, glorify or vilify them.
+About the only thing you can’t do is ignore them because they change things, they push the human race forward.
+
+And while some may see them as the crazy ones, we see genius because the people who are crazy enough to think they can change the world, are the ones who do.";
+Compare = "Compare";
+None = "None";
