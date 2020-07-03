@@ -14,14 +14,14 @@ struct Types: View {
                             .tag(1)
                     }).pickerStyle(SegmentedPickerStyle())
                         .padding(.vertical)) {
-                    ForEach(Face.all) { face in
-                        NavigationLink(destination: Type(face: face)) {
-                            Text(face.name)
-                                .font(face.font)
-                                .padding(.vertical)
+                        ForEach(mode == 0 ? Face.swiftui : Face.uikit) { face in
+                            NavigationLink(destination: Type(face: face, faces: self.mode == 0 ? Face.swiftui : Face.uikit)) {
+                                Text(face.name)
+                                    .font(face.font)
+                                    .padding(.vertical)
+                            }
                         }
                     }
-                }
             }.listStyle(GroupedListStyle())
                 .navigationBarTitle("Dynamic.type", displayMode: .large)
         }.navigationViewStyle(StackNavigationViewStyle())
