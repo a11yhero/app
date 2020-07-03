@@ -15,7 +15,7 @@ struct Tabs: View {
                     Image(systemName: "textformat.size")
                     Text("Type")
                 }.tag(1)
-            Text("Second View")
+            Colors()
                 .tabItem {
                     Image(systemName: "circle.lefthalf.fill")
                     Text("Colors")
