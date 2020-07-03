@@ -102,7 +102,7 @@ private struct Sheet: View {
                             Rectangle()
                                 .cornerRadius(8)
                                 .foregroundColor(shade.color)
-                                .frame(width: 50)
+                                .frame(width: 50, height: 50)
                             Text(shade.name)
                                 .padding(.vertical)
                             Spacer()
