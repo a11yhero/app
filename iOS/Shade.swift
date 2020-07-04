@@ -4,7 +4,18 @@ import UIKit
 struct Shade: Identifiable {
     static let swiftui = [
         Shade("Blue", color: .blue),
-        .init("Pink", color: .pink)]
+        .init("Pink", color: .pink),
+        .init("Red", color: .red),
+        .init("Black", color: .black),
+        .init("White", color: .white),
+        .init("Gray", color: .gray),
+        .init("Green", color: .green),
+        .init("Orange", color: .orange),
+        .init("Purple", color: .purple),
+        .init("Yellow", color: .yellow),
+        .init("Primary", color: .primary),
+        .init("Secondary", color: .secondary),
+        .init("Accent", color: .accentColor)]
     
     static let uikit = [
         Shade("System Blue", color: .init(.systemBlue)),
