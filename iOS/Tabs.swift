@@ -7,7 +7,7 @@ struct Tabs: View {
         TabView(selection: $selected) {
             Home(tab: $selected)
                 .tabItem {
-                    Image(systemName: "circle.lefthalf.fill")
+                    Image(systemName: "app.fill")
                     Text("Home")
                 }.tag(0)
             Types()
