@@ -47,7 +47,7 @@ struct Tint: View {
                 self.sheetBackground = false
                 self.sheetCompare = false
             })) {
-                Sheet(title: "Compare", current: self.sheetCompare ? self.compare : self.background, shades: self.shades) {
+                Sheet(title: self.sheetCompare ? "Compare" : "Background", current: self.sheetCompare ? self.compare : self.background, shades: self.shades) {
                     if self.sheetCompare {
                         self.compare = $0
                     }
