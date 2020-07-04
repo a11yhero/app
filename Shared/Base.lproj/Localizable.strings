@@ -23,7 +23,9 @@ Type = "Type";
 Colors = "Colors";
 Features = "Features";
 Accessibility.features = "Accessibility Features";
-About.accessibility.features = "Accessibility features help a wide range of people interact with their devices. For many, accessibility is a necessity. For others, it’s a practicality. People can personalize their devices by choosing which accessibility features give them the best user experience.
+About.accessibility.features = "Accessibility features help a wide range of people interact with their devices. For many, accessibility is a necessity. For others, it’s a practicality.
+
+People can personalize their devices by choosing which accessibility features give them the best user experience.
 
 By designing your app with accessibility in mind, you make it possible for everyone to enjoy your app.";
 Misfits = "Here’s to the crazy ones, the misfits, the rebels, the troublemakers, the round pegs in the square holes, the ones who see things differently.

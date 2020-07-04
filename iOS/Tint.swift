@@ -61,27 +61,6 @@ struct Tint: View {
     }
 }
 
-private struct Control: View {
-    let title: LocalizedStringKey
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 22)
-                    .frame(width: 120, height: 44)
-                    .shadow(color: .secondary, radius: 2, x: -2, y: -2)
-                    .shadow(color: .init(.systemBackground), radius: 2, x: 2, y: 2)
-                    .foregroundColor(.init(.systemBackground))
-                Text(title)
-                    .foregroundColor(.primary)
-                    .font(.footnote)
-                    .bold()
-            }
-        }
-    }
-}
-
 private struct Sheet: View {
     let title: LocalizedStringKey
     let current: Shade
@@ -98,23 +77,7 @@ private struct Sheet: View {
                     Button(action: {
                         self.action(shade)
                     }) {
-                        HStack {
-                            Rectangle()
-                                .cornerRadius(8)
-                                .foregroundColor(shade.color)
-                                .frame(width: 50, height: 50)
-                            Text(shade.name)
-                                .padding(.vertical)
-                            Spacer()
-                            
-                            if shade.id == self.current.id {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .resizable()
-                                    .frame(width: 22, height: 22)
-                                    .foregroundColor(.blue)
-                                    .padding(.vertical)
-                            }
-                        }
+                        ColorCell(shade: shade, active: shade.id == self.current.id)
                     }
                 }
             }

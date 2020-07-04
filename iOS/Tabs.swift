@@ -20,11 +20,11 @@ struct Tabs: View {
                     Image(systemName: "circle.lefthalf.fill")
                     Text("Colors")
                 }.tag(2)
-            Text("Second View")
-            .tabItem {
-                Image(systemName: "slider.horizontal.3")
-                Text("Features")
-            }.tag(3)
+            Attributes()
+                .tabItem {
+                    Image(systemName: "slider.horizontal.3")
+                    Text("Features")
+                }.tag(3)
         }.accentColor(.pink)
     }
 }

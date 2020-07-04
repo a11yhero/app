@@ -47,19 +47,7 @@ struct Type: View {
                                     self.compare = face
                                     self.comparing = false
                                 }) {
-                                    HStack {
-                                        Text(face.name)
-                                            .font(face.font)
-                                            .padding(.vertical)
-                                        Spacer()
-                                        if face.id == self.compare?.id {
-                                            Image(systemName: "checkmark.circle.fill")
-                                                .resizable()
-                                                .frame(width: 22, height: 22)
-                                                .foregroundColor(.blue)
-                                                .padding(.vertical)
-                                        }
-                                    }
+                                    FontCell(face: face, active: face.id == self.compare?.id)
                                 }.foregroundColor(.primary)
                         }
                     }

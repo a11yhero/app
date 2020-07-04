@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1F58BE24B07D4900353E92 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F58BD24B07D4900353E92 /* Attributes.swift */; };
+		CE1F58C024B07DA200353E92 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F58BF24B07DA200353E92 /* Mode.swift */; };
+		CE1F58C224B07E4C00353E92 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F58C124B07E4C00353E92 /* Control.swift */; };
+		CE1F58C424B07E8F00353E92 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F58C324B07E8F00353E92 /* ColorCell.swift */; };
+		CE1F58C624B07F5200353E92 /* FontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F58C524B07F5200353E92 /* FontCell.swift */; };
 		CE6EDFD424AF12F9007220C4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EDFD324AF12F9007220C4 /* Colors.swift */; };
 		CE6EDFD624AF1350007220C4 /* Shade.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EDFD524AF1350007220C4 /* Shade.swift */; };
 		CE6EDFD824AF14A1007220C4 /* Tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EDFD724AF14A1007220C4 /* Tint.swift */; };
@@ -25,6 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1F58BD24B07D4900353E92 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		CE1F58BF24B07DA200353E92 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		CE1F58C124B07E4C00353E92 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
+		CE1F58C324B07E8F00353E92 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		CE1F58C524B07F5200353E92 /* FontCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCell.swift; sourceTree = "<group>"; };
 		CE6EDFD324AF12F9007220C4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CE6EDFD524AF1350007220C4 /* Shade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shade.swift; sourceTree = "<group>"; };
 		CE6EDFD724AF14A1007220C4 /* Tint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tint.swift; sourceTree = "<group>"; };
@@ -92,9 +102,14 @@
 			children = (
 				CE94DF0D24ADCB4A0050E238 /* Info.plist */,
 				CE94DEFF24ADCB490050E238 /* App.swift */,
+				CE1F58BD24B07D4900353E92 /* Attributes.swift */,
+				CE1F58C324B07E8F00353E92 /* ColorCell.swift */,
 				CE6EDFD324AF12F9007220C4 /* Colors.swift */,
+				CE1F58C124B07E4C00353E92 /* Control.swift */,
 				CE7D19E324AE4FFB00418015 /* Face.swift */,
+				CE1F58C524B07F5200353E92 /* FontCell.swift */,
 				CECF4AFB24ADFA8E00EB6E16 /* Home.swift */,
+				CE1F58BF24B07DA200353E92 /* Mode.swift */,
 				CE7D19DD24AE3A2C00418015 /* Privacy.swift */,
 				CE94DF0124ADCB490050E238 /* Scene.swift */,
 				CE6EDFD524AF1350007220C4 /* Shade.swift */,
@@ -179,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1F58C624B07F5200353E92 /* FontCell.swift in Sources */,
 				CE94DF0024ADCB490050E238 /* App.swift in Sources */,
 				CE6EDFD424AF12F9007220C4 /* Colors.swift in Sources */,
 				CE7D19DE24AE3A2C00418015 /* Privacy.swift in Sources */,
@@ -187,8 +203,12 @@
 				CE94DF0424ADCB490050E238 /* Tabs.swift in Sources */,
 				CE7D19E224AE4AE400418015 /* Types.swift in Sources */,
 				CE6EDFD624AF1350007220C4 /* Shade.swift in Sources */,
+				CE1F58C424B07E8F00353E92 /* ColorCell.swift in Sources */,
 				CE7D19E424AE4FFB00418015 /* Face.swift in Sources */,
+				CE1F58C224B07E4C00353E92 /* Control.swift in Sources */,
+				CE1F58C024B07DA200353E92 /* Mode.swift in Sources */,
 				CE7D19E624AE533600418015 /* Type.swift in Sources */,
+				CE1F58BE24B07D4900353E92 /* Attributes.swift in Sources */,
 				CE6EDFD824AF14A1007220C4 /* Tint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
