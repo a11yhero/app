@@ -3,12 +3,14 @@ import SwiftUI
 struct Type: View {
     let face: Face
     let faces: [Face]
+    @State private var text = NSLocalizedString("Misfits", comment: "")
     @State private var compare: Face?
     @State private var comparing = false
+    @State private var editing = false
     
     var body: some View {
         ScrollView {
-            Text("Misfits")
+            Text(verbatim: text)
                 .font(face.font)
                 .padding()
             Button(action: {
@@ -30,13 +32,41 @@ struct Type: View {
                 }.padding()
             }.background(Color.blue)
             if compare != nil {
-                Text("Misfits")
+                Text(verbatim: text)
                     .font(compare!.font)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding()
             }
         }.navigationBarTitle(.init(verbatim: face.name), displayMode: .inline)
-            .sheet(isPresented: $comparing) {
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.editing = true
+                }, label: {
+                    Image(systemName: "pencil.circle.fill")
+                }).frame(width: 100, height: 100, alignment: .trailing))
+            .sheet(isPresented: $editing) {
+                List {
+                    Section(header:
+                        HStack {
+                            Text("Yours")
+                                .font(.headline)
+                                .padding(.vertical)
+                        
+                            Spacer()
+                            
+                            Button(action: {
+                                self.editing = false
+                            }) {
+                                Text("Done")
+                            }
+                        }) {
+                            TextField("Comparing", text: self.$text)
+                                .lineLimit(5)
+                                .padding()
+                        }
+                }.listStyle(PlainListStyle())
+            }
+            .popover(isPresented: $comparing) {
                 List {
                     Section(header:
                         Text("Compare")
