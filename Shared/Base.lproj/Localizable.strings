@@ -39,3 +39,5 @@ None = "None";
 Background = "Background";
 Yours = "Add your own text";
 Comparing = "Comparing Text";
+Settings = "Settings";
+Display = "Display Mode";

@@ -25,6 +25,11 @@ struct Tabs: View {
                     Image(systemName: "slider.horizontal.3")
                     Text("Features")
                 }.tag(3)
+            Settings()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }.tag(4)
         }.accentColor(.pink)
     }
 }

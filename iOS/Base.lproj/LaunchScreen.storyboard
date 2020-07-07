@@ -24,6 +24,7 @@
                                     <tabBarItem title="" image="textformat.size" catalog="system" id="iml-VD-qOf"/>
                                     <tabBarItem title="" image="circle.lefthalf.fill" catalog="system" id="C0v-pN-Zd8"/>
                                     <tabBarItem title="" image="slider.horizontal.3" catalog="system" id="c7X-Ca-qpc"/>
+                                    <tabBarItem title="" image="gear" catalog="system" id="3Hd-R3-5z0"/>
                                 </items>
                             </tabBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCy-W1-zs0">
@@ -61,6 +62,7 @@
     <resources>
         <image name="app.fill" catalog="system" width="128" height="114"/>
         <image name="circle.lefthalf.fill" catalog="system" width="128" height="121"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
         <image name="textformat.size" catalog="system" width="128" height="82"/>
     </resources>

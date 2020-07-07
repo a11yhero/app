@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE05BD1924B45BE7001FEDA7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05BD1824B45BE7001FEDA7 /* Settings.swift */; };
 		CE1F58BE24B07D4900353E92 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F58BD24B07D4900353E92 /* Attributes.swift */; };
 		CE1F58C024B07DA200353E92 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F58BF24B07DA200353E92 /* Mode.swift */; };
 		CE1F58C224B07E4C00353E92 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F58C124B07E4C00353E92 /* Control.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE05BD1824B45BE7001FEDA7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CE1F58BD24B07D4900353E92 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		CE1F58BF24B07DA200353E92 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		CE1F58C124B07E4C00353E92 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				CE1F58BF24B07DA200353E92 /* Mode.swift */,
 				CE7D19DD24AE3A2C00418015 /* Privacy.swift */,
 				CE94DF0124ADCB490050E238 /* Scene.swift */,
+				CE05BD1824B45BE7001FEDA7 /* Settings.swift */,
 				CE6EDFD524AF1350007220C4 /* Shade.swift */,
 				CE94DF0324ADCB490050E238 /* Tabs.swift */,
 				CE6EDFD724AF14A1007220C4 /* Tint.swift */,
@@ -197,6 +200,7 @@
 				CE1F58C624B07F5200353E92 /* FontCell.swift in Sources */,
 				CE94DF0024ADCB490050E238 /* App.swift in Sources */,
 				CE6EDFD424AF12F9007220C4 /* Colors.swift in Sources */,
+				CE05BD1924B45BE7001FEDA7 /* Settings.swift in Sources */,
 				CE7D19DE24AE3A2C00418015 /* Privacy.swift in Sources */,
 				CECF4AFC24ADFA8E00EB6E16 /* Home.swift in Sources */,
 				CE94DF0224ADCB490050E238 /* Scene.swift in Sources */,
