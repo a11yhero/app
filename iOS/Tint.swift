@@ -41,6 +41,19 @@ struct Tint: View {
                 }.padding(.bottom, 10)
             }
         }.navigationBarTitle(.init(verbatim: shade.name), displayMode: .inline)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    UIGraphicsBeginImageContextWithOptions(.init(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), true, 1)
+                    UIApplication.shared.windows.first!.rootViewController!.view.layer.render(in: UIGraphicsGetCurrentContext()!)
+                    let image = UIGraphicsGetImageFromCurrentImageContext()
+                    UIGraphicsEndImageContext()
+                        
+                    let alert = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+                    alert.popoverPresentationController?.sourceView = UIApplication.shared.windows.first?.rootViewController?.view
+                    UIApplication.shared.windows.first!.rootViewController!.present(alert, animated: true)
+                }, label: {
+                    Image(systemName: "square.and.arrow.up.fill")
+                }).frame(width: 100, height: 100, alignment: .trailing))
             .sheet(isPresented: .init(get: {
                 self.sheetBackground || self.sheetCompare
             }, set: { _ in
