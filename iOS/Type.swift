@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct Type: View {
-    let face: Face
-    let faces: [Face]
-    @State private var text = NSLocalizedString("Misfits", comment: "")
+    @State var text = NSLocalizedString("Misfits", comment: "")
     @State private var compare: Face?
     @State private var comparing = false
-    @State private var editing = false
+    let face: Face
+    let faces: [Face]
+    private let coordinator = Coordinator()
     
     var body: some View {
         ScrollView {
@@ -39,34 +39,15 @@ struct Type: View {
             }
         }.navigationBarTitle(.init(verbatim: face.name), displayMode: .inline)
             .navigationBarItems(trailing:
-                Button(action: {
-                    self.editing = true
-                }, label: {
+                NavigationLink(destination:
+                    TextView(text: self.$text, coordinator: coordinator)
+                        .onAppear {
+                            self.coordinator.start()
+                    }
+                        .navigationBarTitle("Yours"), label: {
                     Image(systemName: "pencil.circle.fill")
                 }).frame(width: 100, height: 100, alignment: .trailing))
-            .sheet(isPresented: $editing) {
-                List {
-                    Section(header:
-                        HStack {
-                            Text("Yours")
-                                .font(.headline)
-                                .padding(.vertical)
-                        
-                            Spacer()
-                            
-                            Button(action: {
-                                self.editing = false
-                            }) {
-                                Text("Done")
-                            }
-                        }) {
-                            TextField("Comparing", text: self.$text)
-                                .lineLimit(5)
-                                .padding()
-                        }
-                }.listStyle(PlainListStyle())
-            }
-            .popover(isPresented: $comparing) {
+            .sheet(isPresented: $comparing) {
                 List {
                     Section(header:
                         Text("Compare")
@@ -83,5 +64,46 @@ struct Type: View {
                     }
                 }.listStyle(PlainListStyle())
         }
+    }
+}
+
+private struct TextView: UIViewRepresentable {
+    @Binding var text: String
+    weak var coordinator: Coordinator!
+
+    func makeCoordinator() -> Coordinator {
+        coordinator.view = self
+        return coordinator
+    }
+    
+    func makeUIView(context: Context) -> UITextView {
+        let view = UITextView()
+        view.font = .preferredFont(forTextStyle: .body)
+        view.textContainerInset = .init(top: 20, left: 20, bottom: 20, right: 20)
+        context.coordinator.prepare(view)
+        return view
+    }
+    
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
+    }
+}
+
+private final class Coordinator: NSObject, UITextViewDelegate {
+    var view: TextView?
+    weak var textView: UITextView?
+    
+    func prepare(_ view: UITextView) {
+        textView = view
+        view.delegate = self
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        view?.text = textView.text
+    }
+    
+    func start() {
+        textView?.becomeFirstResponder()
+        textView?.selectAll(nil)
     }
 }
