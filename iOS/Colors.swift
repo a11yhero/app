@@ -6,6 +6,9 @@ struct Colors: View {
     var body: some View {
         NavigationView {
             List {
+                Text("About.dynamic.colors")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
                 Section(header: Mode(mode: $mode)) {
                         ForEach(mode == 0 ? Shade.swiftui : Shade.uikit) { shade in
                             NavigationLink(destination: Tint(shade: shade, shades: self.mode == 0 ? Shade.swiftui : Shade.uikit)) {

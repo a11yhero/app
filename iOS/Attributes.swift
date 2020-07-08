@@ -59,6 +59,9 @@ struct Attributes: View {
     var body: some View {
         NavigationView {
             List {
+                Text("About.accessibility.features")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
                 Section(header: Mode(mode: $mode)) {
                     ForEach(mode == 0 ? swiftui.sorted() : uikit.sorted(), id: \.self) { item in
                         Text(verbatim: item)
