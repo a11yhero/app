@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct Attributes: View {
+    @Binding var title: LocalizedStringKey
     @State private var mode = 0
     
     private let swiftui = [
@@ -57,19 +58,19 @@ struct Attributes: View {
         "Acessibility Container Type"]
     
     var body: some View {
-        NavigationView {
-            List {
-                Text("About.accessibility.features")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                Section(header: Mode(mode: $mode)) {
-                    ForEach(mode == 0 ? swiftui.sorted() : uikit.sorted(), id: \.self) { item in
-                        Text(verbatim: item)
-                            .font(.footnote)
-                    }
+        List {
+            Text("About.accessibility.features")
+                .font(.footnote)
+                .foregroundColor(.secondary)
+            Section(header: Mode(mode: $mode)) {
+                ForEach(mode == 0 ? swiftui.sorted() : uikit.sorted(), id: \.self) { item in
+                    Text(verbatim: item)
+                        .font(.footnote)
                 }
-            }.listStyle(GroupedListStyle())
-                .navigationBarTitle("Accessibility.features", displayMode: .large)
-        }.navigationViewStyle(StackNavigationViewStyle())
+            }
+        }.listStyle(GroupedListStyle())
+            .onAppear {
+                self.title = "Accessibility.features"
+        }
     }
 }

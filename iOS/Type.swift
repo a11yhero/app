@@ -43,9 +43,8 @@ struct Type: View {
                     TextView(text: self.$text, coordinator: coordinator)
                         .onAppear {
                             self.coordinator.start()
-                    }
-                        .navigationBarTitle("Yours"), label: {
-                    Image(systemName: "pencil.circle.fill")
+                    }.navigationBarTitle("Yours"), label: {
+                        Image(systemName: "pencil.circle.fill")
                 }).frame(width: 100, height: 100, alignment: .trailing))
             .sheet(isPresented: $comparing) {
                 List {

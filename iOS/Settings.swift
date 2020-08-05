@@ -2,6 +2,7 @@ import SwiftUI
 import UIKit
 
 struct Settings: View {
+    @Binding var title: LocalizedStringKey
     @State private var mode = 1
     
     var body: some View {
@@ -19,24 +20,24 @@ struct Settings: View {
                     }
                 }
             })
-        return NavigationView {
-            List {
-                Section(header:
-                    Text("Display")
-                        .font(.headline)
-                        .padding(.vertical)) {
-                    Picker("Display", selection: changing, content: {
-                        Text(verbatim: "Dark")
-                            .tag(0)
-                        Text(verbatim: "Default")
-                            .tag(1)
-                        Text(verbatim: "Light")
-                            .tag(2)
-                    }).pickerStyle(SegmentedPickerStyle())
-                        .padding(.vertical)
-                }
-            }.listStyle(GroupedListStyle())
-                .navigationBarTitle("Settings", displayMode: .large)
-        }.navigationViewStyle(StackNavigationViewStyle())
+        return List {
+            Section(header:
+                Text("Display")
+                    .font(.headline)
+                    .padding(.vertical)) {
+                Picker("Display", selection: changing, content: {
+                    Text(verbatim: "Dark")
+                        .tag(0)
+                    Text(verbatim: "Default")
+                        .tag(1)
+                    Text(verbatim: "Light")
+                        .tag(2)
+                }).pickerStyle(SegmentedPickerStyle())
+                    .padding(.vertical)
+            }
+        }.listStyle(GroupedListStyle())
+            .onAppear {
+                self.title = "Settings"
+        }
     }
 }
