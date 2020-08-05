@@ -10,7 +10,7 @@ final class App: NSObject, UIApplicationDelegate {
     
     func application(_: UIApplication, didDiscardSceneSessions: Set<UISceneSession>) {
         windows = windows.filter {
-            didDiscardSceneSessions.contains($0.windowScene!.session)
+            !didDiscardSceneSessions.contains($0.windowScene!.session)
         }
     }
 }
