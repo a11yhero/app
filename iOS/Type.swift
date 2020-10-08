@@ -4,6 +4,7 @@ struct Type: View {
     @State var text = NSLocalizedString("Misfits", comment: "")
     @State private var compare: Face?
     @State private var comparing = false
+    @State private var textView = false
     let face: Face
     let faces: [Face]
     private let coordinator = Coordinator()
@@ -13,6 +14,22 @@ struct Type: View {
             Text(verbatim: text)
                 .font(face.font)
                 .padding()
+                .sheet(isPresented: $textView) {
+                    NavigationView {
+                        TextView(text: self.$text, coordinator: coordinator)
+                            .onAppear {
+                                self.coordinator.start()
+                        }
+                        .navigationBarTitle("Yours", displayMode: .inline)
+                        .navigationBarItems(trailing:
+                                                Button(action: {
+                                                    textView = false
+                                                }, label: {
+                                                    Image(systemName: "xmark")
+                                                        .foregroundColor(.pink)
+                                                }))
+                    }
+                }
             Button(action: {
                 self.comparing = true
             }) {
@@ -30,7 +47,32 @@ struct Type: View {
                             .font(.headline)
                     }
                 }.padding()
-            }.background(Color.blue)
+            }
+            .background(Color.blue)
+            .sheet(isPresented: $comparing) {
+                NavigationView {
+                    List {
+                        Section {
+                                ForEach(self.faces.filter { $0.id != self.face.id }) { face in
+                                    Button(action: {
+                                        self.compare = face
+                                        self.comparing = false
+                                    }) {
+                                        FontCell(face: face, active: face.id == self.compare?.id)
+                                    }.foregroundColor(.primary)
+                            }
+                        }
+                    }.listStyle(PlainListStyle())
+                    .navigationBarTitle("Compare", displayMode: .inline)
+                    .navigationBarItems(trailing:
+                                            Button(action: {
+                                                comparing = false
+                                            }, label: {
+                                                Image(systemName: "xmark")
+                                                    .foregroundColor(.pink)
+                                            }))
+                }
+        }
             if compare != nil {
                 Text(verbatim: text)
                     .font(compare!.font)
@@ -39,30 +81,11 @@ struct Type: View {
             }
         }.navigationBarTitle(.init(verbatim: face.name), displayMode: .inline)
             .navigationBarItems(trailing:
-                NavigationLink(destination:
-                    TextView(text: self.$text, coordinator: coordinator)
-                        .onAppear {
-                            self.coordinator.start()
-                    }.navigationBarTitle("Yours"), label: {
-                        Image(systemName: "pencil.circle.fill")
-                }).frame(width: 100, height: 100, alignment: .trailing))
-            .sheet(isPresented: $comparing) {
-                List {
-                    Section(header:
-                        Text("Compare")
-                            .font(.headline)
-                            .padding(.vertical)) {
-                            ForEach(self.faces.filter { $0.id != self.face.id }) { face in
-                                Button(action: {
-                                    self.compare = face
-                                    self.comparing = false
-                                }) {
-                                    FontCell(face: face, active: face.id == self.compare?.id)
-                                }.foregroundColor(.primary)
-                        }
-                    }
-                }.listStyle(PlainListStyle())
-        }
+                                    Button(action: {
+                                        textView = true
+                                    }, label: {
+                                        Image(systemName: "pencil.circle.fill")
+                                    }).frame(width: 100, height: 100, alignment: .trailing))
     }
 }
 
