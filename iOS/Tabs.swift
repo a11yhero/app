@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Tabs: View {
-    @State var title = LocalizedStringKey("")
+    @State private var title = LocalizedStringKey("")
     
     var body: some View {
         NavigationView {
