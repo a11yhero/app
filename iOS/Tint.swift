@@ -94,15 +94,6 @@ private struct Sheet: View {
                     }
                 }
             }
-        }
-        .listStyle(PlainListStyle())
-        .navigationBarTitle("Compare", displayMode: .inline)
-        .navigationBarItems(trailing:
-                                Button(action: {
-                                    comparing = false
-                                }, label: {
-                                    Image(systemName: "xmark")
-                                        .foregroundColor(.pink)
-                                }))
+        }.listStyle(PlainListStyle())
     }
 }
